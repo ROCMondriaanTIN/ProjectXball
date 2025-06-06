@@ -8,51 +8,51 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class UserController extends AbstractController
 {
-    #[Route('/user', name: 'app_user')]
+    #[Route('/member', name: 'app_member')]
     public function index(): Response
     {
-        return $this->render('user/index.html.twig', [
-            'controller_name' => 'UserController',
+        return $this->render('member/index.html.twig', [
+            'controller_name' => 'MemberController',
         ]);
     }
 
-    #[Route('/players', name: 'userPlayers')]
-    public function player(): Response
+    #[Route('/players', name: 'memberPlayers')]
+    public function memberPlayer(): Response
     {
-        return $this->render('user/players.html.twig', [
-            'controller_name' => 'UserController',
+        return $this->render('member/players.html.twig', [
+            'controller_name' => 'MemberController',
         ]);
     }
 
-    #[Route('/clubs', name: 'userClubs')]
-    public function club(): Response
+    #[Route('/clubs', name: 'memberClubs')]
+    public function memberClub(): Response
     {
-        return $this->render('user/clubs.html.twig', [
-            'controller_name' => 'UserController',
+        return $this->render('member/clubs.html.twig', [
+            'controller_name' => 'MemberController',
         ]);
     }
 
-    #[Route('/leagues', name: 'userLeagues')]
-    public function league(): Response
+    #[Route('/leagues', name: 'memberLeagues')]
+    public function memberLeague(): Response
     {
-        return $this->render('user/league.html.twig', [
-            'controller_name' => 'UserController',
+        return $this->render('member/league.html.twig', [
+            'controller_name' => 'MemberController',
         ]);
     }
 
-    #[Route('/favorites', name: 'userFavorites')]
-    public function favorites(): Response
+    #[Route('/favorites', name: 'memberFavorites')]
+    public function memberFavorites(): Response
     {
-        return $this->render('user/favorites.html.twig', [
-            'controller_name' => 'UserController',
+        return $this->render('member/favorites.html.twig', [
+            'controller_name' => 'MemberController',
         ]);
     }
 
     #[Route('/profile', name: 'profile')]
-    public function profile(): Response
+    public function memberProfile(): Response
     {
-        return $this->render('user/profile.html.twig', [
-            'controller_name' => 'UserController',
+        return $this->render('member/profile.html.twig', [
+            'controller_name' => 'MemberController',
         ]);
     }
 

@@ -20,8 +20,8 @@ final class HomeController extends AbstractController
             return $this->render('employee/index.html.twig');
         }
 
-        if ($this->isGranted('ROLE_USER')) {
-            return $this->render('user/index.html.twig');
+        if ($this->isGranted('ROLE_MEMBER')) {
+            return $this->render('member/index.html.twig');
         }
 
         // Geen rol: guest pagina
@@ -31,7 +31,7 @@ final class HomeController extends AbstractController
     #[Route('/players', name: 'players')]
     public function player(): Response
     {
-        return $this->render('user/players.html.twig', [
+        return $this->render('home/players.html.twig', [
             'controller_name' => 'UserController',
         ]);
     }
@@ -39,7 +39,7 @@ final class HomeController extends AbstractController
     #[Route('/clubs', name: 'clubs')]
     public function club(): Response
     {
-        return $this->render('user/clubs.html.twig', [
+        return $this->render('home/clubs.html.twig', [
             'controller_name' => 'UserController',
         ]);
     }
@@ -47,16 +47,9 @@ final class HomeController extends AbstractController
     #[Route('/leagues', name: 'leagues')]
     public function league(): Response
     {
-        return $this->render('user/league.html.twig', [
+        return $this->render('home/league.html.twig', [
             'controller_name' => 'UserController',
         ]);
     }
 
-    #[Route('/profile', name: 'profile')]
-    public function profile(): Response
-    {
-        return $this->render('user/profile.html.twig', [
-            'controller_name' => 'UserController',
-        ]);
-    }
 }

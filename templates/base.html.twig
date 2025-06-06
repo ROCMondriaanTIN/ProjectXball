@@ -16,7 +16,7 @@
     <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">VoetbalInfo</a>
+            <a class="navbar-brand" href="{{ path('app_home') }}">VoetbalInfo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -43,55 +43,55 @@
                         </li>
                     {% endif %}
 
-                    {# Student menu #}
-                    {% if is_granted('ROLE_USER') %}
+                    {% if is_granted('ROLE_MEMBER') %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('usePlayers') }}">Spelers</a>
+                            <a class="nav-link" href="{{ path('memberPlayers') }}">Spelers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('userClubs') }}">Clubs</a>
+                            <a class="nav-link" href="{{ path('memberClubs') }}">Clubs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('userLeagues') }}">Competities</a>
+                            <a class="nav-link" href="{{ path('memberLeagues') }}">Competities</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('userFavorites') }}">Favorieten</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('userProfile') }}">Profiel</a>
-                        </li>
-                    {% endif %}
-
-                    {# Docent menu #}
-                    {% if is_granted('ROLE_EMPLOYEE') %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('players') }}">Spelers</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('clubs') }}">Clubs</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('leagues') }}">Competities</a>
+                            <a class="nav-link" href="{{ path('memberFavorites') }}">Favorieten</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('profile') }}">Profiel</a>
                         </li>
                     {% endif %}
 
-                    {# Medewerker menu #}
                     {% if is_granted('ROLE_EMPLOYEE') %}
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link" href="{{ path('employeeProducts') }}">Webshop Beheren</a>#}
-{#                        </li>#}
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link" href="{{ path('employee_teacher_new') }}">Docent Aanmaken</a>#}
-{#                        </li>#}
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link" href="{{ path('employee_teacher_list') }}">Docenten Overzicht</a>#}
-{#                        </li>#}
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link" href="{{ path('employee_user_list') }}">Gebruiker Overzicht</a>#}
-{#                        </li>#}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('employeePlayers') }}">Spelers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('employeeClubs') }}">Clubs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('employeeLeagues') }}">Competities</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('profile') }}">Profiel</a>
+                        </li>
+                    {% endif %}
+
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('adminPlayers') }}">Spelers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('adminClubs') }}">Clubs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('adminLeagues') }}">Competities</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('adminEditUser') }}">Gebruikers beheren</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('profile') }}">Profiel</a>
+                        </li>
                     {% endif %}
 
                 </ul>
