@@ -20,18 +20,94 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+
+                    {# Visitor (not logged in) #}
+                    {% if not app.user %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('players') }}">Spelers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('clubs') }}">Clubs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('leagues') }}">Competities</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_register') }}">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_login') }}">Login</a>
+                        </li>
+                    {% endif %}
+
+                    {# Student menu #}
+                    {% if is_granted('ROLE_USER') %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('usePlayers') }}">Spelers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('userClubs') }}">Clubs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('userLeagues') }}">Competities</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('userFavorites') }}">Favorieten</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('userProfile') }}">Profiel</a>
+                        </li>
+                    {% endif %}
+
+                    {# Docent menu #}
+                    {% if is_granted('ROLE_EMPLOYEE') %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('players') }}">Spelers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('clubs') }}">Clubs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('leagues') }}">Competities</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('profile') }}">Profiel</a>
+                        </li>
+                    {% endif %}
+
+                    {# Medewerker menu #}
+                    {% if is_granted('ROLE_EMPLOYEE') %}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{{ path('employeeProducts') }}">Webshop Beheren</a>#}
+{#                        </li>#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{{ path('employee_teacher_new') }}">Docent Aanmaken</a>#}
+{#                        </li>#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{{ path('employee_teacher_list') }}">Docenten Overzicht</a>#}
+{#                        </li>#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{{ path('employee_user_list') }}">Gebruiker Overzicht</a>#}
+{#                        </li>#}
+                    {% endif %}
+
+                </ul>
+
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Spelers</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Clubs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Statistieken</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Inloggen</a></li>
+                    {% if app.user %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
     </nav>
-        {% block body %}
+
+    {% block body %}
         fghjk
         {% endblock %}
     </body>

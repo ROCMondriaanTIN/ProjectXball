@@ -27,4 +27,36 @@ final class HomeController extends AbstractController
         // Geen rol: guest pagina
         return $this->render('home/index.html.twig');
     }
+
+    #[Route('/players', name: 'players')]
+    public function player(): Response
+    {
+        return $this->render('user/players.html.twig', [
+            'controller_name' => 'UserController',
+        ]);
+    }
+
+    #[Route('/clubs', name: 'clubs')]
+    public function club(): Response
+    {
+        return $this->render('user/clubs.html.twig', [
+            'controller_name' => 'UserController',
+        ]);
+    }
+
+    #[Route('/leagues', name: 'leagues')]
+    public function league(): Response
+    {
+        return $this->render('user/league.html.twig', [
+            'controller_name' => 'UserController',
+        ]);
+    }
+
+    #[Route('/profile', name: 'profile')]
+    public function profile(): Response
+    {
+        return $this->render('user/profile.html.twig', [
+            'controller_name' => 'UserController',
+        ]);
+    }
 }
