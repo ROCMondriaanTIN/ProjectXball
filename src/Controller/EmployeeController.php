@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class EmployeeController extends AbstractController
 {
-    #[Route('/employee', name: 'app_employee')]
+    #[Route('/employee/home', name: 'app_employee')]
     public function index(): Response
     {
         return $this->render('employee/index.html.twig', [
@@ -16,7 +16,7 @@ final class EmployeeController extends AbstractController
         ]);
     }
 
-    #[Route('/players', name: 'employeePlayers')]
+    #[Route('/employee/players', name: 'employeePlayers')]
     public function employeePlayer(): Response
     {
         return $this->render('employee/players.html.twig', [
@@ -24,7 +24,7 @@ final class EmployeeController extends AbstractController
         ]);
     }
 
-    #[Route('/clubs', name: 'employeeClubs')]
+    #[Route('/employee/clubs', name: 'employeeClubs')]
     public function employeeClub(): Response
     {
         return $this->render('employee/clubs.html.twig', [
@@ -32,7 +32,7 @@ final class EmployeeController extends AbstractController
         ]);
     }
 
-    #[Route('/leagues', name: 'employeeLeagues')]
+    #[Route('/employee/leagues', name: 'employeeLeagues')]
     public function employeeLeague(): Response
     {
         return $this->render('employee/league.html.twig', [
@@ -40,7 +40,7 @@ final class EmployeeController extends AbstractController
         ]);
     }
 
-    #[Route('/favorites', name: 'employeeFavorites')]
+    #[Route('/employee/favorites', name: 'employeeFavorites')]
     public function employeeFavorites(): Response
     {
         return $this->render('employee/favorites.html.twig', [
@@ -48,7 +48,7 @@ final class EmployeeController extends AbstractController
         ]);
     }
 
-    #[Route('/profile', name: 'profile')]
+    #[Route('/employee/profile', name: 'profile')]
     public function employeeProfile(): Response
     {
         return $this->render('employee/profile.html.twig', [

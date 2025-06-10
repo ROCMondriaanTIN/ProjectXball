@@ -16,7 +16,7 @@ final class UserController extends AbstractController
         ]);
     }
 
-    #[Route('/players', name: 'memberPlayers')]
+    #[Route('/member/players', name: 'memberPlayers')]
     public function memberPlayer(): Response
     {
         return $this->render('member/players.html.twig', [
@@ -24,7 +24,7 @@ final class UserController extends AbstractController
         ]);
     }
 
-    #[Route('/clubs', name: 'memberClubs')]
+    #[Route('/member/clubs', name: 'memberClubs')]
     public function memberClub(): Response
     {
         return $this->render('member/clubs.html.twig', [
@@ -32,7 +32,7 @@ final class UserController extends AbstractController
         ]);
     }
 
-    #[Route('/leagues', name: 'memberLeagues')]
+    #[Route('/member/leagues', name: 'memberLeagues')]
     public function memberLeague(): Response
     {
         return $this->render('member/league.html.twig', [
@@ -40,7 +40,7 @@ final class UserController extends AbstractController
         ]);
     }
 
-    #[Route('/favorites', name: 'memberFavorites')]
+    #[Route('/member/favorites', name: 'memberFavorites')]
     public function memberFavorites(): Response
     {
         return $this->render('member/favorites.html.twig', [

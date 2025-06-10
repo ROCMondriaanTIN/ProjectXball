@@ -28,7 +28,7 @@ final class HomeController extends AbstractController
         return $this->render('home/index.html.twig');
     }
 
-    #[Route('/players', name: 'players')]
+    #[Route('/home/players', name: 'players')]
     public function player(): Response
     {
         return $this->render('home/players.html.twig', [
@@ -36,7 +36,7 @@ final class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/clubs', name: 'clubs')]
+    #[Route('/home/clubs', name: 'clubs')]
     public function club(): Response
     {
         return $this->render('home/clubs.html.twig', [
@@ -44,7 +44,7 @@ final class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/leagues', name: 'leagues')]
+    #[Route('/home/leagues', name: 'leagues')]
     public function league(): Response
     {
         return $this->render('home/league.html.twig', [

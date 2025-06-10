@@ -16,7 +16,7 @@ final class AdminController extends AbstractController
         ]);
     }
 
-    #[Route('/players', name: 'adminPlayers')]
+    #[Route('/admin/players', name: 'adminPlayers')]
     public function adminPlayers(): Response
     {
         return $this->render('admin/players.html.twig', [
@@ -25,7 +25,7 @@ final class AdminController extends AbstractController
     }
 
 
-    #[Route('/clubs', name: 'adminClubs')]
+    #[Route('/admin/clubs', name: 'adminClubs')]
     public function adminClub(): Response
     {
         return $this->render('admin/clubs.html.twig', [
@@ -33,7 +33,7 @@ final class AdminController extends AbstractController
         ]);
     }
 
-    #[Route('/leagues', name: 'adminLeagues')]
+    #[Route('/admin/leagues', name: 'adminLeagues')]
     public function adminLeague(): Response
     {
         return $this->render('admin/league.html.twig', [
@@ -41,7 +41,7 @@ final class AdminController extends AbstractController
         ]);
     }
 
-    #[Route('/favorites', name: 'adminEditUser')]
+    #[Route('/admin/favorites', name: 'adminEditUser')]
     public function adminFavorites(): Response
     {
         return $this->render('admin/editUser.html.twig', [
@@ -49,7 +49,7 @@ final class AdminController extends AbstractController
         ]);
     }
 
-    #[Route('/profile', name: 'profile')]
+    #[Route('/admin/profile', name: 'profile')]
     public function adminProfile(): Response
     {
         return $this->render('admin/profile.html.twig', [
