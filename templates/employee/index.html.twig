@@ -1,20 +1,57 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello EmployeeController!{% endblock %}
+{% block title %}Hello UserController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-{#    <h1>Hello {{ controller_name }}! ✅</h1>#}
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/Applications/XAMPP/xamppfiles/htdocs/ProjectX/src/Controller/EmployeeController.php</code></li>
-        <li>Your template at <code>/Applications/XAMPP/xamppfiles/htdocs/ProjectX/templates/employee/index.html.twig</code></li>
-    </ul>
-</div>
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+    <main class="container my-5">
+        <section>
+            <h2 class="mb-4">Populaire Spelers</h2>
+            <div class="row">
+                <div class="col-md-3 d-flex">
+                    <div class="card mb-4 w-100 d-flex flex-column">
+                        <img src="images/speler1.jpg" class="card-img-top" alt="Speler 1">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Kylian Mbappé</h5>
+                            <p class="card-text">Aanvaller | PSG | 30 goals dit seizoen</p>
+                            <div class="mt-auto"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex">
+                    <div class="card mb-4 w-100 d-flex flex-column">
+                        <img src="images/speler2.jpg" class="card-img-top" alt="Speler 2">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Erling Haaland</h5>
+                            <p class="card-text">Aanvaller | Man City | 28 goals dit seizoen</p>
+                            <div class="mt-auto"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex">
+                    <div class="card mb-4 w-100 d-flex flex-column">
+                        <img src="images/speler3.jpg" class="card-img-top" alt="Speler 3">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Lionel Messi</h5>
+                            <p class="card-text">Aanvaller | Inter Miami | 25 goals dit seizoen</p>
+                            <div class="mt-auto"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex">
+                    <div class="card mb-4 w-100 d-flex flex-column">
+                        <img src="images/speler4.jpg" class="card-img-top" alt="Speler 4">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Cristiano Ronaldo</h5>
+                            <p class="card-text">Aanvaller | Al Nassr | 27 goals dit seizoen</p>
+                            <div class="mt-auto"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 {% endblock %}
